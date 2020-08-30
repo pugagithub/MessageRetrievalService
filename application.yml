@@ -1,0 +1,28 @@
+server:
+    port : 8081
+--- 
+spring: 
+  cloud: 
+    stream: 
+      bindings: 
+        CHANNEL_NAME_FOR_POSTING: 
+          binder: kafka
+          content-type: application/json
+          destination: SOCIAL_MEDIA_POSTS
+          group: input-group-1
+        CHANNEL_NAME_FOR_RETRIEVAL: 
+          binder: kafka
+          content-type: application/json
+          destination: SOCIAL_MEDIA_POSTS
+          group: output-group-1
+      default-binder: kafka
+      kafka: 
+        binder: 
+          brokers: 
+            - "localhost:9092"
+           
+           
+
+
+      
+            
