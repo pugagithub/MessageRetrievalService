@@ -10,14 +10,8 @@ import org.springframework.messaging.SubscribableChannel;
 public interface ChannelConfigInterface {
 	
 
-	    String CHANNEL_NAME_FOR_POSTING = "CHANNEL_NAME_FOR_POSTING";
 	    String CHANNEL_NAME_FOR_RETRIEVAL = "CHANNEL_NAME_FOR_RETRIEVAL";
 
-	    
-
-	    @Output(CHANNEL_NAME_FOR_POSTING)
-	    MessageChannel messagePostingChannel();
-	    
 	    @Input(CHANNEL_NAME_FOR_RETRIEVAL)
 	    SubscribableChannel messageRetrievalChannel();
 

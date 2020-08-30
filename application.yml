@@ -5,11 +5,6 @@ spring:
   cloud: 
     stream: 
       bindings: 
-        CHANNEL_NAME_FOR_POSTING: 
-          binder: kafka
-          content-type: application/json
-          destination: SOCIAL_MEDIA_POSTS
-          group: input-group-1
         CHANNEL_NAME_FOR_RETRIEVAL: 
           binder: kafka
           content-type: application/json
