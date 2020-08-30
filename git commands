@@ -1,0 +1,21 @@
+git remote add origin https://github.com/pugagithub/MessagePostingService.git
+git config --global user.email "pugal.sym@gmail.com"
+git config --global user.name "Pugal"
+git push --set-upstream origin master
+git branch --set-upstream-to=origin/master master
+git remote set-url origin https://github.com/pugagithub/MessageRetrievalService.git
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+
+
+yum list docker-ce --showduplicates | sort -r
+yum list docker-ce-cli --showduplicates | sort -r
+sudo yum install docker-ce-19.03.9 docker-ce-cli-19.03.9 containerd.io
+
+rpm -i DeathStar0_42b.rpm
